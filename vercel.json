@@ -1,18 +1,14 @@
 {
   "cleanUrls": true,
-  "static": {
-    "frame.html": {
-      "contentType": "text/html; charset=utf-8"
-    }
-  },
-  "headers": [
+  "routes": [
     {
-      "source": "/frame.html",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
-        { "key": "X-Frame-Options", "value": "ALLOWALL" },
-        { "key": "Cache-Control", "value": "no-cache" }
-      ]
+      "src": "/frame",
+      "dest": "/frame.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "X-Frame-Options": "ALLOWALL",
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+      }
     }
   ]
 }
